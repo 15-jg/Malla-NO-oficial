@@ -217,39 +217,38 @@
 </footer>
 
 <script>
-    // DATA COMPLETA CON OPTATIVOS AGRUPADOS Y AVANCE DE 1 EN 1
+    // DATA COMPLETA CORREGIDA (CFG e Inglés desplazados)
     const subjects = [
-        // SEMESTRE I
+        // SEMESTRE I (Sin CFG ni Inglés)
         { id: "DER06111", row: 1, sem: 1, name: "Fundamentos Histórico-Sociales", credits: 5, prereqs: [] },
         { id: "DER06112", row: 2, sem: 1, name: "Instituciones Políticas y DDHH", credits: 5, prereqs: [] },
         { id: "DER06113", row: 3, sem: 1, name: "Taller de Razonamiento Jurídico", credits: 10, prereqs: [] },
         { id: "DER06114", row: 4, sem: 1, name: "Taller de Investigación y Esc. Legal", credits: 5, prereqs: [] },
         { id: "DER06115", row: 5, sem: 1, name: "Comunicación Oral", credits: 3, prereqs: [] },
-        { id: "CFG1_6",   row: 6, sem: 1, name: "Curso Formación General", credits: 5, prereqs: [] },
-        { id: "CIG1012",  row: 7, sem: 1, name: "Inglés General I", credits: 5, prereqs: [] },
 
-        // SEMESTRE II
+        // SEMESTRE II (Comienzan CFG 1 e Inglés I)
         { id: "DER06121", row: 1, sem: 2, name: "Persona y Acto Jurídico", credits: 5, prereqs: ["DER06111"] },
         { id: "DER06122", row: 2, sem: 2, name: "Derecho Constitucional Orgánico", credits: 5, prereqs: ["DER06112"] },
         { id: "DER06123", row: 3, sem: 2, name: "Introducción al Derecho I", credits: 5, prereqs: ["DER06113"] },
         { id: "DER06124", row: 4, sem: 2, name: "Bases Generales del D° Procesal", credits: 5, prereqs: ["DER06113"] },
-        { id: "CFG2_6",   row: 6, sem: 2, name: "Curso Formación General", credits: 5, prereqs: [] },
-        { id: "CIG1013",  row: 7, sem: 2, name: "Inglés General II", credits: 5, prereqs: ["CIG1012"] },
+        { id: "CFG1_6",   row: 6, sem: 2, name: "Curso Formación General", credits: 5, prereqs: [] },
+        { id: "CIG1012",  row: 7, sem: 2, name: "Inglés General I", credits: 5, prereqs: [] },
 
         // SEMESTRE III
         { id: "DER06211", row: 1, sem: 3, name: "Derechos Reales y D° Inmobiliario", credits: 5, prereqs: ["DER06121"] },
         { id: "DER06212", row: 2, sem: 3, name: "Derechos Fundamentales", credits: 7, prereqs: ["DER06122"] },
         { id: "DER06213", row: 3, sem: 3, name: "Introducción al Derecho II", credits: 5, prereqs: ["DER06123"] },
         { id: "DER06214", row: 5, sem: 3, name: "Economía y Derecho", credits: 5, prereqs: ["DER06114"] },
-        { id: "CFG3_6",   row: 6, sem: 3, name: "Curso Formación General", credits: 5, prereqs: [] },
-        { id: "CIG1014",  row: 7, sem: 3, name: "Inglés General III", credits: 5, prereqs: ["CIG1013"] },
+        { id: "CFG2_6",   row: 6, sem: 3, name: "Curso Formación General", credits: 5, prereqs: [] },
+        { id: "CIG1013",  row: 7, sem: 3, name: "Inglés General II", credits: 5, prereqs: ["CIG1012"] },
 
         // SEMESTRE IV
         { id: "DER06221", row: 1, sem: 4, name: "Derecho de las Obligaciones", credits: 5, prereqs: ["DER06211"] },
         { id: "DER06222", row: 3, sem: 4, name: "Derecho Penal Parte General I", credits: 5, prereqs: ["DER06123"] },
         { id: "DER06223", row: 4, sem: 4, name: "Taller Destrezas Litigación Oral", credits: 5, prereqs: ["DER06115", "DER06212", "DER06124"] },
         { id: "DER06224", row: 5, sem: 4, name: "Derecho Regulatorio", credits: 5, prereqs: ["DER06214"] },
-        { id: "CFG4_6",   row: 6, sem: 4, name: "Curso Formación General", credits: 5, prereqs: [] },
+        { id: "CFG3_6",   row: 6, sem: 4, name: "Curso Formación General", credits: 5, prereqs: [] },
+        { id: "CIG1014",  row: 7, sem: 4, name: "Inglés General III", credits: 5, prereqs: ["CIG1013"] },
         
         // SEMESTRE V
         { id: "DER06311", row: 1, sem: 5, name: "Derecho de Daños", credits: 5, prereqs: ["DER06221"] },
@@ -257,8 +256,8 @@
         { id: "DER06313", row: 3, sem: 5, name: "Derecho Penal Parte General II", credits: 5, prereqs: ["DER06213", "DER06222"] },
         { id: "DER06314", row: 4, sem: 5, name: "Procedimientos Judiciales", credits: 5, prereqs: ["DER06115", "DER06212", "DER06223", "DER06224"] },
         { id: "DER06315", row: 5, sem: 5, name: "Derecho Comercial", credits: 5, prereqs: ["DER06224"] },
-        { id: "CFG5_6",   row: 6, sem: 5, name: "Curso Formación General", credits: 5, prereqs: [] },
-        { id: "CFG6_6",   row: 7, sem: 5, name: "Curso Formación General", credits: 5, prereqs: [] },
+        { id: "CFG4_6",   row: 6, sem: 5, name: "Curso Formación General", credits: 5, prereqs: [] },
+        { id: "CFG5_6",   row: 7, sem: 5, name: "Curso Formación General", credits: 5, prereqs: [] },
 
         // SEMESTRE VI
         { id: "DER06321", row: 1, sem: 6, name: "Contratos", credits: 7, prereqs: ["DER06114", "DER06311"] },
@@ -267,6 +266,7 @@
         { id: "DER06414", row: 4, sem: 6, name: "Taller de Negociación en Procesos Colab.", credits: 5, prereqs: ["DER06314"] },
         { id: "DER06324", row: 5, sem: 6, name: "Derecho Societario", credits: 5, prereqs: ["DER06315"] },
         { id: "DER06416", row: 6, sem: 6, name: "Derecho del Trabajo", credits: 5, prereqs: ["DER06214", "DER06223"] },
+        { id: "CFG6_6",   row: 7, sem: 6, name: "Curso Formación General", credits: 5, prereqs: [] },
 
         // SEMESTRE VII
         { id: "DER06411", row: 1, sem: 7, name: "Derecho de Familia y Sucesorio", credits: 5, prereqs: ["DER06111", "DER06321"] },
@@ -389,18 +389,15 @@
         // LÓGICA PARA RAMOS ACUMULATIVOS
         if (sub.isAccumulative) {
             let current = partialCredits[id] || 0;
-            current += sub.step; // Avanza según el step (ahora de 1 en 1)
+            current += sub.step; 
             
             if (current > sub.credits) {
-                // Si se pasa del máximo, se reinicia a 0
                 current = 0;
                 passed.delete(id);
                 removeFuture(id);
             } else if (current === sub.credits) {
-                // Si llega al tope, se aprueba
                 passed.add(id);
             } else {
-                // Si está en progreso, aún no está aprobado para los futuros
                 passed.delete(id);
                 removeFuture(id);
             }
@@ -451,7 +448,7 @@
                     el.classList.add('passed');
                 } else if (canTake) {
                     el.classList.add('available');
-                    if (current > 0) el.classList.add('partial'); // Azul claro si tiene progreso
+                    if (current > 0) el.classList.add('partial'); 
                 } else {
                     el.classList.add('locked');
                 }
@@ -474,7 +471,6 @@
         document.getElementById('txt-percent').innerText = `${percent}%`;
         document.getElementById('bar-fill').style.width = `${percent}%`;
         
-        // Guardar ambos estados
         localStorage.setItem('malla_progress', JSON.stringify([...passed]));
         localStorage.setItem('malla_partial', JSON.stringify(partialCredits));
     }
@@ -484,7 +480,7 @@
     function resetMalla() { 
         if(confirm("¿Borrar todo el progreso?")) { 
             passed.clear(); 
-            partialCredits = {}; // Reiniciar también los parciales
+            partialCredits = {}; 
             saveAndRender(); 
         } 
     }
